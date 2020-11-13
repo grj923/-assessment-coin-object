@@ -20,9 +20,19 @@ let coin = {
   toHTML: function () {
     let image = document.createElement("img");
     if (this.state === 0) {
-      console.log(" A picture of a heads goes here");
+      image.src =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/2006_Quarter_Proof.png/609px-2006_Quarter_Proof.png";
+      image.style.height = "100px";
+      image.style.width = "100px";
+      document.body.append(image);
+      // console.log(" A picture of a heads goes here");
     } else {
-      console.log("A picture of a tail goes here");
+      image.src =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Quarter_new.jpg/602px-Quarter_new.jpg";
+      image.style.height = "100px";
+      image.style.width = "100px";
+      document.body.append(image);
+      // console.log("A picture of a tail goes here");
       return image;
     }
     /* 3. Set the properties of this image element to show either face-up
@@ -53,6 +63,7 @@ function display20Images() {
   for (i = 0; i < 20; i++) {
     coin.flip();
     coin.toHTML();
+
     // console.log("Figure out how to get an image up");
   }
   // using a loop to flip the coin 20 times…but this time instead of displaying the result as a string,
